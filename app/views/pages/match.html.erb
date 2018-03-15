@@ -1,0 +1,14 @@
+<h3>Your Matches</h3>
+
+<% @matches.each do |match| %>
+  <% if match.user_two_id == current_user.id %>
+    <%= "Tienes un match con #{@users.find(match.user_one_id).name}"  %>
+    <%= link_to 'Ver perfil', page_path(match.user_one_id) %>
+  <% elsif match.user_one_id == current_user.id %>
+    <%= "Tienes un match con #{@users.find(match.user_two_id).name}"  %>
+    <%= link_to 'Ver perfil', page_path(match.user_two_id) %>
+  <% else %>
+    <%= "Aún no tienes nigún match!" %>
+  <% end %>
+  <br>
+<% end %>

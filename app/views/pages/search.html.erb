@@ -1,0 +1,8 @@
+<h4>Search</h4>
+<h2>
+  <%= @user.email %><br>
+  <%= @user.gender %>
+  <%= @user.age %><br>
+</h2>
+<%= link_to 'Like', interactions_path(me_gusta: true, id_user: @user.id), method: 'post' %>
+<%= link_to 'Unlike', interactions_path(me_gusta: false, id_user: @user.id), method: 'post' %>
